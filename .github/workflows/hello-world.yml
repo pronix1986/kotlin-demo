@@ -16,7 +16,6 @@ jobs:
       - run: echo ${{ secrets.DUMMY_SECRET }}
       - run: echo ${{ strategy.fail-fast }}
       - run: echo "*******************************************"
-      - run: echo ${{ toJson(env) }}
       - run: echo ${{ toJson(job) }}
       - run: echo ${{ toJson(steps) }}
       - run: echo ${{ toJson(runner) }}
