@@ -1,8 +1,12 @@
 name: Hello World
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+
+env:
+  GLOBAL_VAR: Hello
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/hello-world-javascript-action@main
+      - run: echo "${{ env.GLOBAL_VAR }} ${{ github.repository_owner }}"
