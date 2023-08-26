@@ -1,0 +1,8 @@
+name: Hello World
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/hello-world-javascript-action@v1.0.0
