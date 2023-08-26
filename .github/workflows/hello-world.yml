@@ -15,3 +15,14 @@ jobs:
       - run: echo ${{ runner.os }}
       - run: echo ${{ secrets.DUMMY_SECRET }}
       - run: echo ${{ strategy.fail-fast }}
+      - run: echo "*******************************************"
+      - run: echo ${{ toJson(env) }}
+      - run: echo ${{ toJson(job) }}
+      - run: echo ${{ toJson(jobs) }}
+      - run: echo ${{ toJson(steps) }}
+      - run: echo ${{ toJson(runner) }}
+      - run: echo ${{ toJson(secrets) }}
+      - run: echo ${{ toJson(strategy) }}
+      - run: echo ${{ toJson(matrix) }}
+      - run: echo ${{ toJson(needs) }}
+      - run: echo ${{ toJson(inputs) }}
