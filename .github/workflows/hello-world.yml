@@ -18,7 +18,6 @@ jobs:
       - run: echo "*******************************************"
       - run: echo ${{ toJson(env) }}
       - run: echo ${{ toJson(job) }}
-      - run: echo ${{ toJson(jobs) }}
       - run: echo ${{ toJson(steps) }}
       - run: echo ${{ toJson(runner) }}
       - run: echo ${{ toJson(secrets) }}
