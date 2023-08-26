@@ -10,3 +10,13 @@ jobs:
     steps:
       - uses: actions/hello-world-javascript-action@main
       - run: echo "${{ env.GLOBAL_VAR }} ${{ github.repository_owner }}. We're under ${{ github.workspace }}"
+      - run: echo ${{ github }}
+      - run: echo ${{ env }}
+      - run: echo ${{ vars }}
+      - run: echo ${{ job }}
+      - run: echo ${{ steps }}
+      - run: echo ${{ runner }}
+      - run: echo ${{ secrets }}
+      - run: echo ${{ strategy }}
+      - run: echo ${{ needs }}
+      - run: echo ${{ inputs }}
