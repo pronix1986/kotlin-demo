@@ -5,7 +5,7 @@ on: [push]
 env:
   GLOBAL_VAR: Hello
 jobs:
-  Explore-GitHub-Actions:
+  hello-world-save-artifact:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/hello-world-javascript-action@main
@@ -16,5 +16,21 @@ jobs:
       - run: echo ${{ secrets.DUMMY_SECRET }}
         if: ${{startsWith(github.repository_owner, '1pronix')}}
       - run: echo ${{ strategy.fail-fast }}
-      - run: echo "*******************************************"
+      - run: echo "*******************************************" > dummy.txt
+      - name: Store dummy artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dummy-artifact
+          path: dummy.txt
+
+  hello-world-download-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Trying to download an artifact"
+      - name: Download
+        uses: actions/download-artifact@v3
+        with:
+          name: dummy-artifact
+      - run: cat dummy.txt
+
 
