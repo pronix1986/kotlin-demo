@@ -13,3 +13,9 @@ jobs:
       homeDir: /home/ec2
     secrets:
       token: ${{ secrets.DUMMY_SECRET }}
+
+  use-shared-boolshit:
+    runs-on: ubuntu-latest
+    needs: [call-another-wf]
+    steps:
+      - run: echo ${{ needs.call-another-wf.output.dummyout }}

@@ -8,6 +8,10 @@ on:
     secrets:
       token:
         required: true
+    outputs:
+      dummyout:
+        description: 'Dummy output'
+        value: ${{ jobs.actual-runner.outputs.output1 }}
 
 jobs:
   actual-runner:
@@ -16,3 +20,7 @@ jobs:
       - run: |
           echo 'Home dir: ${{ inputs.homeDir }}, \
           token: ${{ secrets.token }}'
+      - id: step1
+        run: echo "first=dummy" >> ${{ GITHUB_OUTPUT }}
+    outputs:
+      output1: ${{ steps.step1.outputs.first }}
