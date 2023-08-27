@@ -1,0 +1,9 @@
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  scheduled-wf:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Dummy run - $(date)'
