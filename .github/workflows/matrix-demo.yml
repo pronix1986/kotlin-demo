@@ -1,0 +1,16 @@
+name: Matrix Demo
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  try-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dummy: [1, 2, 3, 4, 5]
+
+    steps:
+      - name: Trying matrix
+        run: echo ${{ matrix.dummy }}
