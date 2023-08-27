@@ -1,0 +1,15 @@
+name: Parent WF
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-another-wf:
+    permissions:
+      contents: read
+    uses: ./.github/workflow/wf-B.yml
+    with:
+      homeDir: /home/ec2
+    secrets:
+      token: ${{ secrets.DUMMY_SECRET }}
