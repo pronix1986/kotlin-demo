@@ -8,7 +8,7 @@ jobs:
   call-another-wf:
     permissions:
       contents: read
-    uses: ./.github/workflow/wf-B.yml
+    uses: ./.github/workflows/wf-B.yml
     with:
       homeDir: /home/ec2
     secrets:
