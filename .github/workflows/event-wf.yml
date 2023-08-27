@@ -9,3 +9,15 @@ jobs:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
         run: |
           echo $EVENT_CONTEXT
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Building'
+
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: publish
+        run: echo 'Publishing'
