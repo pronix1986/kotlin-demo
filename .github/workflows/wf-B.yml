@@ -17,10 +17,12 @@ jobs:
   actual-runner:
     runs-on: ubuntu-latest
     steps:
+      - id: step1
+        run: echo "first=dummy" >> $GITHUB_OUTPUT
+
       - run: |
           echo 'Home dir: ${{ inputs.homeDir }}, \
           token: ${{ secrets.token }}'
-      - id: step1
-        run: echo "first=dummy" >> $GITHUB_OUTPUT
+
     outputs:
       output1: ${{ steps.step1.outputs.first }}

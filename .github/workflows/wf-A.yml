@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: [call-another-wf]
     steps:
-      - run: echo ${{ needs.call-another-wf.output.dummyout }}
+      - run: echo ${{ needs.call-another-wf.outputs.dummyout }}
