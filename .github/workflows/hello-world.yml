@@ -24,6 +24,7 @@ jobs:
           path: dummy.txt
 
   hello-world-download-artifact:
+    needs: [hello-world-save-artifact]
     runs-on: ubuntu-latest
     steps:
       - run: echo "Trying to download an artifact"
