@@ -22,19 +22,19 @@ on:
 
 
 jobs:
-  try-matrix:
+  manual-wf:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print debug info
-        if: ${{ input.logLevel = 'debug' }}
+        if: ${{ inputs.logLevel = 'debug' }}
         run: echo 'Dummy debug info'
 
       - name: Prod env warning
-        if: ${{ input.environment = 'prod' }}
+        if: ${{ inputs.environment = 'prod' }}
         run: echo 'Going to prod'
 
       - name: Common action
         run: |
           echo "Common action with tags\
-          :${{ input.tags }}"
+          :${{ inputs.tags }}"
