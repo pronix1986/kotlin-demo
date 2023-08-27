@@ -1,0 +1,40 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - debug
+          - info
+          - warning
+      environment:
+        description: 'Environment to run'
+        type: environment
+        required: true
+      tags:
+        description: 'Test scenario tags'
+        type: string
+        required: false
+
+
+jobs:
+  try-matrix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print debug info
+        if: ${{ input.logLevel = 'debug' }}
+        run: echo 'Dummy debug info'
+
+      - name: Prod env warning
+        if: ${{ input.environment = 'prod' }}
+        run: echo 'Going to prod
+
+      - name: Common action
+        run: |
+          echo "Common action with tags\
+          :${{ input.tags }}"
