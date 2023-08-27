@@ -27,11 +27,11 @@ jobs:
 
     steps:
       - name: Print debug info
-        if: ${{ inputs.logLevel = 'debug' }}
+        if: ${{ inputs.logLevel == 'debug' }}
         run: echo 'Dummy debug info'
 
       - name: Prod env warning
-        if: ${{ inputs.environment = 'prod' }}
+        if: ${{ inputs.environment == 'prod' }}
         run: echo 'Going to prod'
 
       - name: Common action
