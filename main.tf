@@ -15,10 +15,9 @@ data "local_file" "readme" {
 }
 
 output "file_detail" {
-  value = "${data.local_file.readme.filename}: ${data.local_file.readme.content}"
+  value = "${var.abc} | ${data.local_file.readme.filename}: ${data.local_file.readme.content}"
 }
 
-# output "file_content" {
-#   value = data.local_file.readme.content
-# }
-
+variable "abc" { # set by HCP
+  type = string
+}
