@@ -14,11 +14,11 @@ data "local_file" "readme" {
   filename = "README.md"
 }
 
-output "file_path" {
-  value = data.local_file.readme.filename
+output "file_detail" {
+  value = "${data.local_file.readme.filename}: ${data.local_file.readme.content}"
 }
 
-output "file_content" {
-  value = data.local_file.readme.content
-}
+# output "file_content" {
+#   value = data.local_file.readme.content
+# }
 
