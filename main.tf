@@ -21,3 +21,9 @@ output "file_detail" {
 variable "abc" { # set by HCP
   type = string
 }
+
+variable "TFC_WORKSPACE_SLUG" {}
+
+output "workspace_slug" {
+  value = var.TFC_WORKSPACE_SLUG
+}
